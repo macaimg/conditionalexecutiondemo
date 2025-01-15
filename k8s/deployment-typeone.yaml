@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: typeone-deployment
+  labels:
+    app: typeone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: typeone
+  template:
+    metadata:
+      labels:
+        app: typeone
+    spec:
+      containers:
+      - name: typeone-container
+        image: typeone-app:1.0
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "typeone"
+        ports:
+        - containerPort: 8080

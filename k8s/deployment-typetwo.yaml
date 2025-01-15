@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: typetwo-deployment
+  labels:
+    app: typetwo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: typetwo
+  template:
+    metadata:
+      labels:
+        app: typetwo
+    spec:
+      containers:
+      - name: typetwo-container
+        image: typetwo-app:1.0
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "typetwo"
+        ports:
+        - containerPort: 8080

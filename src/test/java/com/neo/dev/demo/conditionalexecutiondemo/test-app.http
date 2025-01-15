@@ -3,3 +3,10 @@ http://localhost:8080/typetwo/message
 
 ### Get typeone message
 http://localhost:8080/typeone/message
+
+
+### Get typeone from k8 pod
+http://typeone.local/typeone/message
+
+### Get typetwo from k8 pod
+http://typetwo.local/typetwo/message

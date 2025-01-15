@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: ""
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: typeone.local
+    http:
+      paths:
+      - path: /typeone
+        pathType: Prefix
+        backend:
+          service:
+            name: typeone-service
+            port:
+              number: 80
+  - host: typetwo.local
+    http:
+      paths:
+      - path: /typetwo
+        pathType: Prefix
+        backend:
+          service:
+            name: typetwo-service
+            port:
+              number: 80
