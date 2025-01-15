@@ -1,0 +1,5 @@
+### Get typetwo message
+http://localhost:8080/typetwo/message
+
+### Get typeone message
+http://localhost:8080/typeone/message
